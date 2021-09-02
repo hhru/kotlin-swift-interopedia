@@ -81,7 +81,7 @@
 			<td>Маппинги не требуются :thumbsup:</td>
 		</tr>
 		<tr>
-			<td><a href="/docs/types/Unit%20and%20Nothing">Unit and Nothing</a></td>
+			<td><a href="/docs/types/Unit%20and%20Nothing.md">Unit and Nothing</a></td>
 			<td>Типы Unit и Nothing можно использовать так же, как в Kotlin: Unit как объект или void, Nothing - нельзя создать</td>
 			<td>:white_check_mark:</td>
 			<td>Реальность соответствует ожиданиям :thumbsup:</td>
@@ -126,7 +126,7 @@
 			<td>В .h-файле свойство есть, а в Swift-е не получается использовать</td>
 		</tr>
 		<tr>
-			<td><a href="/docs/usual-workflow/Extension%20function%20over%20usual%20class.md">Extension function over usual class</a></td>
+			<td><a href="/docs/usual-workflow/Extension%20functions%20over%20usual%20class.md">Extension functions over usual class</a></td>
 			<td>Функцию можно использовать на объекте класса</td>
 			<td>:white_check_mark:</td>
 			<td>Реальность соответствует ожиданиям :thumbsup:</td>
