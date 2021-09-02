@@ -56,7 +56,16 @@ __attribute__((swift_name("SealedInterfaceExampleSecond")))
 В Swift-е роль sealed-интерфейсов выполняют enum-ы, и можно было бы написать специальный bridge-код для конвертации
 sealed-интерфейса в Swift-овый enum.
 
-См. [moko-kswift overview](/docs/moko-kswift/Overview.md)
+Плагин [moko-kwift](https://github.com/icerockdev/moko-kswift/) умеет генерировать такой маппинг
+[с помощью фичи](https://github.com/icerockdev/moko-kswift/blob/master/kswift-gradle-plugin/src/main/kotlin/dev/icerock/moko/kswift/plugin/feature/SealedToSwiftEnumFeature.kt).
+
+```kotlin
+kswift {
+    install(dev.icerock.moko.kswift.plugin.feature.SealedToSwiftEnumFeature)
+}
+```
+
+Но есть некоторые особенности, см. [moko-kswift overview](/docs/moko-kswift/Overview.md)
 
 ---
 [Оглавление](/README.md)

@@ -30,7 +30,18 @@ func example() {
 }
 ```
 
-См. [moko-kswift overview](/docs/moko-kswift/Overview.md)
+Плагин [moko-kswift](https://github.com/icerockdev/moko-kswift) умеет решать эту проблему 
+с помощью [фичи](https://github.com/icerockdev/moko-kswift/blob/master/kswift-gradle-plugin/src/main/kotlin/dev/icerock/moko/kswift/plugin/feature/PlatformExtensionFunctionsFeature.kt):
+
+```kotlin
+kswift {
+	install(
+		dev.icerock.moko.kswift.plugin.feature.PlatformExtensionFunctionsFeature
+	)
+}
+```
+
+Но есть некоторые особенности, см. [moko-kswift overview](/docs/moko-kswift/Overview.md)
 
 ---
 [Оглавление](/README.md)

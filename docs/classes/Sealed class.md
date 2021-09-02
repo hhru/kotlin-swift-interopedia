@@ -41,7 +41,49 @@ func example(s: MySealed) {
 В Swift-е роль sealed-классов выполняют enum-ы, и можно было бы написать специальный bridge-код для конвертации 
 sealed-классов в Swift-овый enum.
 
-См. [moko-kswift overview](/docs/moko-kswift/Overview.md)
+```swift
+enum MySealedSwift {
+	
+	case object 
+	case simple(String)
+	case data(String, Bool)
+
+	public init(_ obj: MySealed) { 
+		if obj is MySealed.Object { 
+			self = .object
+		} else if let obj = obj as? MySealed.Simple { 
+			self = .simple(obj.param1) 
+		} else if let obj = obj as? MySealed.Data { 
+			self = .data(obj.param1, obj.param2) 
+		} else { 
+			fatalError("MySealedSwift not syncronized with MySealed class") 
+		}
+	}
+
+}
+
+// Использование
+func switchUsage(mySealed: MySealed) {
+	switch MySealedSwift(mySealed)
+	case .obj:
+		// do stuff
+	case let .simple(param1):
+		// do stuff
+	case let .data(param1, param2):
+		// do stuff
+}
+```
+
+Плагин [moko-kwift](https://github.com/icerockdev/moko-kswift/) умеет генерировать такой маппинг 
+[с помощью фичи](https://github.com/icerockdev/moko-kswift/blob/master/kswift-gradle-plugin/src/main/kotlin/dev/icerock/moko/kswift/plugin/feature/SealedToSwiftEnumFeature.kt).
+
+```kotlin
+kswift {
+    install(dev.icerock.moko.kswift.plugin.feature.SealedToSwiftEnumFeature)
+}
+```
+
+Но есть некоторые особенности, см. [moko-kswift overview](/docs/moko-kswift/Overview.md)
 
 ---
 [Оглавление](/README.md)

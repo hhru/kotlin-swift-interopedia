@@ -31,7 +31,7 @@ func example() {
 }
 ```
 
-См. [moko-kswift overview](/docs/moko-kswift/Overview.md)
+moko-kswift это [пока не чинит](https://github.com/icerockdev/moko-kswift/issues/8).
 
 ---
 [Оглавление](/README.md)
